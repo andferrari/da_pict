@@ -36,16 +36,16 @@
 \draw[thick,->] (0,0) -- (0,5);
 
 \foreach \x in {1,2,...,6}{
-	\koala[xshift=30+20*rand, yshift=40+20*rand,scale=0.2];
-	\bear[xshift=90+20*rand, yshift=20+20*rand,scale=0.2]}
-
-\foreach \x in {1,2,...,6}{
 	\pgfmathsetmacro{\mxs}{30+20*rand}
 	\pgfmathsetmacro{\mys}{110+20*rand}
 	\pgfmathsetmacro{\bxs}{90+20*rand}
 	\pgfmathsetmacro{\bys}{110+20*rand}
 	\koala[body=myblue,baguette,beret,xshift=\mxs, yshift=\mys,scale=0.2];
 	\bear[body=myblue,baguette,beret,xshift=\bxs, yshift=\bys,scale=0.2]}
+	
+\foreach \x in {1,2,...,6}{
+	\koala[xshift=30+20*rand, yshift=40+20*rand,scale=0.2];
+	\bear[xshift=90+20*rand, yshift=20+20*rand,scale=0.2]}
 
 \draw[line width=2, myorange] (1.5,-0.3) -- (2.7,2.5);
 \node  at (1.5,0.5) {$\Omega_s$};
