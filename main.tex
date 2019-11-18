@@ -25,8 +25,8 @@
 \fill [mylightbeige, rotate=-20, opacity=0.4] (1.5,1.8) ellipse (2.3 and 1.5); 
 \fill [mylightblue, opacity=0.4] (2, 4) ellipse (2.3 and 1.5);
 
-\draw[thick,->] (0,0) -- (7,0);
-\draw[thick,->] (0,0) -- (0,5.2);
+%\draw[thick,->] (0,0) -- (7,0);
+%\draw[thick,->] (0,0) -- (0,5.2);
 
 \foreach \x in {1,2,...,6}{
 	\pgfmathsetmacro{\mxs}{30+20*rand}
@@ -40,15 +40,15 @@
 	\koala[xshift=30+20*rand, yshift=40+20*rand,scale=0.2];
 	\bear[xshift=90+20*rand, yshift=20+20*rand,scale=0.2]}
 
-\draw[line width=2, myorange] (2.2,-0.2)  .. controls (2,1.5) ..  (2.7,2.3);
+\draw[line width=2, myorange, densely dashed] (2.2,-0.2)  .. controls (2,1.5) ..  (2.7,2.3);
 \node  at (1.5,0.5) {$\Omega_s$};
 \node  at (2.4,3.5) {$\Omega_t$};
-\node[draw,align=left] at (5.6,2.5) {
+\node[draw,align=left] at (5.2,2.5) {
 \tikz{\koala[scale=0.2];\koala[body=myblue,baguette,beret,xshift=.4cm,scale=0.2]} Class 1\\ 
 \tikz{\bear[scale=0.2];\bear[body=myblue,baguette,beret,xshift=.4cm,scale=0.2]}  Class 2\\ 
 \tikz{\fill [mylightbeige] (0,0) ellipse (0.2 and 0.2)} Samples $\boldsymbol{x}_i^s$\\
 \tikz{\fill [mylightblue] (0,0) ellipse (0.2 and 0.2)} Samples $\boldsymbol{x}_i^t$\\  
-\tikz{\draw[line width=2, myorange] (0,0cm) -- (0.3,0cm)} Classifier  $\boldsymbol{x}_i^s$
+\tikz{\draw[line width=2, myorange, densely dashed] (0,0cm) -- (0.3,0cm)} Classifier  $\boldsymbol{x}_i^s$
 };
 \node at (3.5,5.5) {\bf  \large Dataset};
 \end{scope}
@@ -59,8 +59,6 @@
 \fill [mylightbeige, rotate=-20, opacity=0.4] (1.5,1.8) ellipse (2.3 and 1.5); 
 \fill [mylightblue, opacity=0.4] (2, 4) ellipse (2.3 and 1.5);
 
-\draw[thick,->] (0,0) -- (7,0);
-\draw[thick,->] (0,0) -- (0,5.2);
 
 \foreach \x in {1,2,...,6}{
 	\pgfmathsetmacro{\mxs}{30+20*rand}
@@ -81,7 +79,7 @@
 \node (source)  at (1.5,0.5) {$\Omega_s$};
 \node (target)  at (2.4,3.5) {$\Omega_t$};
 \draw[line width=2,->]  (source) to [bend left] node[right]   {$\boldsymbol{T}_{\gamma_0}(\cdot)$} (target);
-\node[draw,align=left] at (5,2.2) {
+\node[draw,align=left] at (4.5,1.5) {
 \tikz{\koala[baguette,beret,scale=0.2];\bear[baguette,beret,xshift=.4cm,scale=0.2]} Samples $\boldsymbol{T}_{\gamma_0}(\boldsymbol{x}_i^s)$\\ 
 \tikz{\koala[body=myblue,baguette,beret,scale=0.2];\bear[body=myblue,baguette,beret,xshift=.4cm,scale=0.2]}  Samples $\boldsymbol{x}_i^t$
 };
@@ -90,9 +88,6 @@
 
 \pgfmathsetseed{3}
 \begin{scope}[xshift=15cm]
-\fill [mylightblue, opacity=0.4] (2, 4) ellipse (2.3 and 1.5);
-\draw[thick,->] (0,0) -- (7,0);
-\draw[thick,->] (0,0) -- (0,5.2);
 
 \foreach \x in {1,2,...,6}{
 	\pgfmathsetmacro{\mxs}{30+20*rand}
@@ -110,25 +105,19 @@
 	\koala[baguette,beret,xshift=\mxs, yshift=\mys,scale=0.2];
 	\bear[baguette,beret,xshift=\bxs, yshift=\bys,scale=0.2]}
 
-
-\draw[line width=2, myviolet] (1.9,2.7)  .. controls (2.1,3.7) .. (1.9,5.2);
+\draw[line width=2, myviolet,densely dashed] (1.9,2.7)  .. controls (2.1,3.7) .. (1.9,5.2);
 
 \node  at (2.4,3.5) {$\Omega_t$};
-\node[draw,align=left] at (4.8,1.5) {
+\node[draw,align=left] at (4,1.5) {
 \tikz{\koala[baguette,beret,scale=0.2];\bear[baguette,beret,xshift=.4cm,scale=0.2]} Samples $\boldsymbol{T}_{\gamma_0}(\boldsymbol{x}_i^s)$\\ 
 \tikz{\koala[body=myblue,baguette,beret,scale=0.2];\bear[body=myblue,baguette,beret,xshift=.4cm,scale=0.2]}  Samples $\boldsymbol{x}_i^t$\\
-\tikz{\draw[line width=2, myviolet] (0,0cm) -- (0.3,0cm)} Classifier  on $\boldsymbol{T}_{\gamma_0}(\boldsymbol{x}_i^s)$
+\tikz{\draw[line width=2, myviolet, densely dashed] (0,0cm) -- (0.3,0cm)} Classifier  on $\boldsymbol{T}_{\gamma_0}(\boldsymbol{x}_i^s)$
 };
 \node at (3.5,5.5) {\bf  \large Classification on transported data};
 \end{scope}
 
 \end{tikzpicture}
 
-
-
-
-% koala -> bear
-% marmot -
 
 
 \end{document}
